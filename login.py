@@ -384,7 +384,6 @@ def loginNowOp():
     check_password = cursor.fetchone()
     if check_password[0] == password:
         operator_landing(win)
-        
     else:
         messagebox.showerror("Login Failed!", "Invalid username or password.")
         
