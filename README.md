@@ -116,37 +116,44 @@ If you come across a defective vehicle or want to report an issue, follow these 
 
 # Operator
 
-### Registration
+- [Operator Registration](#operator-registration)
+- [Operator Log In](#operator-log-in)
+- [Operator Adding Bikes](#operator-adding-bikes)
+- [Operator Renting a Vehicle](#operator-removing-bikes)
+- [Operator Checking Activity](#operator-tracking-bikes)
+- [Operator Returning a Vehicle](#operator-monitoring-bikes)
+
+### Operator Registration
 
 1. Click on the "Register" button.
 2. Fill in your registration details.
 3. Click "Register" to create your account.
 
-### Login
+### Operator Login
 
 1. Click on the "Login" button.
 2. Enter your registered email and password.
 3. Click "Login" to access your account.
 
-### Adding Bikes
+### Operator Adding Bikes
 
 1. Navigate to the "Add Bikes" section.
 2. Click on the "Add Bikes" button.
 3. Submit the bike details.
 
-### Removing Bikes
+### Operator Removing Bikes
 
 1. Visit the "Remove Bike" section.
 2. Click on the "Remove Bike" button.
 3. Provide the appropriate bike ID.
 
-### Tracking Bikes
+### Operator Tracking Bikes
 
 1. Access the "Track Bikes" section.
 2. Choose a location from the dropdown menu.
 3. View the data of all bikes present at the selected location.
 
-### Monitoring Bike Status
+### Operator Monitoring Bike Status
 
 1. Check the landing page where all bikes are visible with their location and states (available, charged, servicing).
 2. Charge a bike by clicking on the "Charge" button.
