@@ -3,6 +3,38 @@
 Welcome to the E-bike Rental System, a user-friendly application that allows you to rent E-bikes conveniently. This README will guide you through the steps to use the system effectively.
 
 
+1. Fork the repository in your account
+2. Clone your forked repository:
+
+   ```bash
+   git clone https://github.com/yourusername/group-project.git
+   ```
+
+3. Change directory to the project folder:
+
+   ```bash
+   cd bike-management-system
+   ```
+
+4. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+
+
+## Usage
+To get started with the Bike Management System, follow these installation steps:
 
 # Customer
 
@@ -84,4 +116,55 @@ If you come across a defective vehicle or want to report an issue, follow these 
 
 # Operator
 
-Enjoy your E-bike rentals, and feel free to contact us if you have any questions or issues!
+### Registration
+
+1. Click on the "Register" button.
+2. Fill in your registration details.
+3. Click "Register" to create your account.
+
+### Login
+
+1. Click on the "Login" button.
+2. Enter your registered email and password.
+3. Click "Login" to access your account.
+
+### Adding Bikes
+
+1. Navigate to the "Add Bikes" section.
+2. Click on the "Add Bikes" button.
+3. Submit the bike details.
+
+### Removing Bikes
+
+1. Visit the "Remove Bike" section.
+2. Click on the "Remove Bike" button.
+3. Provide the appropriate bike ID.
+
+### Tracking Bikes
+
+1. Access the "Track Bikes" section.
+2. Choose a location from the dropdown menu.
+3. View the data of all bikes present at the selected location.
+
+### Monitoring Bike Status
+
+1. Check the landing page where all bikes are visible with their location and states (available, charged, servicing).
+2. Charge a bike by clicking on the "Charge" button.
+3. Repair a bike if servicing is needed by clicking on the "Repair" button.
+4. Move a bike to a different location by clicking on the "Move Bike" button.
+
+## Contributing
+
+Contributions to improve the Bike Management System are welcome. If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your fork and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Enjoy managing your bikes with the Bike Management System, and feel free to reach out if you have any questions or suggestions!
+
