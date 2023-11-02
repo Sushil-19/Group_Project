@@ -21,7 +21,7 @@ This is a simple E-bike Rental System implemented using Tkinter, a Python librar
 2. Clone your forked repository:
 
    ```bash
-   git clone https://github.com/yourusername/group-project.git
+   git clone https://github.com/your-github-account/Group_Project.git
    ```
 
 3. Change directory to the project folder:
