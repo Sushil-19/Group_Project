@@ -5,7 +5,7 @@ os.environ['TK_SILENCE_DEPRECATION'] = '1'
 from tkinter import *
 from PIL import ImageTk, Image
 import sqlite3
-# import cv2
+import cv2
 from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,11 +68,11 @@ class manager() :
         self.button2 = Button(self.window, text='Clear', command=self.clear)
         self.button2.place(x=1050, y=70, width=50, height=25)
 
-        # self.button3 = Button(self.window, text='Show location', command=self.heatmap)
-        # self.button3.place(x=1100, y=70, width=100, height=25)
+        self.button3 = Button(self.window, text='Show location', command=self.heatmap)
+        self.button3.place(x=1100, y=70, width=100, height=25)
 
         self.button4 = Button(self.window, text='Show figures', command=self.show_figure)
-        self.button4.place(x=1100, y=70, width=100, height=25)
+        self.button4.place(x=1200, y=70, width=100, height=25)
 
 
         self.conn = sqlite3.connect('Database.db')
@@ -117,7 +117,6 @@ class manager() :
 
         # self.button5 = Button(text='Revoke')
         # self.button5.place(x=450, y =100, width=60, height=25)
-        self.window.mainloop()
         
     def visualize_status(self) :
 
@@ -192,7 +191,6 @@ class manager() :
         plt.figure(figsize=(5, 4))
         plt.plot(categories, number, linestyle='-', color='g', markersize=8, linewidth=1)
 
-        plt.ylim(0, 5)
         # Add title and label
         plt.xlabel('Date')
         plt.ylabel('Number of bikes')
@@ -237,7 +235,7 @@ class manager() :
         plt.figure(figsize=(5, 4))
         plt.bar(categories, number, color=['blue', 'red', 'green'])
 
-        plt.ylim(0, 5)
+
         # Add title and label
         plt.xlabel('Vehicle Type')
         plt.ylabel('Number of bikes')
@@ -428,138 +426,137 @@ class manager() :
 
             self.listbox.destroy()
 
-    # def authority_change(self, add=True) :
+    def authority_change(self, add=True) :
 
-    #     '''
-    #     The function is for changing of authority.
+        '''
+        The function is for changing of authority.
 
-    #     '''
-    #     # Connect to the database.
-    #     # conn = sqlite3.connect('Database.db')
+        '''
+        # Connect to the database.
+        # conn = sqlite3.connect('Database.db')
 
-    #     # with conn:
+        # with conn:
 
-    #     #     cursor = conn.cursor()
-    #     #     cursor.execute()  
-    #     if add :
+        #     cursor = conn.cursor()
+        #     cursor.execute()  
+        # if add :
 
-    # def show_heatmap(self, img_path) :
+    def show_heatmap(self, img_path) :
 
-    #     # Read the image
-    #     image = cv2.imread(img_path)  
-    #     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        # Read the image
+        image = Image.open(img_path) 
+        gray_image = image.convert("L")
+        img_width, img_height = image.width, image.height
 
-    #     img_width, img_height = gray_image.shape
+        np.random.seed(417)
 
-    #     np.random.seed(417)
+        # Connect to the database.
+        self.cursor.execute("SELECT BIKE_LOCATION FROM BIKES")
 
-    #     # Connect to the database.
-    #     self.cursor.execute("SELECT BIKE_LOCATION FROM BIKES")
+        results = self.cursor.fetchall()
+        results = [str(i[0]) for i in results]
 
-    #     results = self.cursor.fetchall()
-    #     results = [str(i[0]) for i in results]
+        count_partick = 0
+        count_ave = 0
+        count_st = 0
+        count_maclay = 0
+        count_bath = 0
 
-    #     count_partick = 0
-    #     count_ave = 0
-    #     count_st = 0
-    #     count_maclay = 0
-    #     count_bath = 0
+        for i in results :
 
-    #     for i in results :
+            if i == 'Partick Rental Station':
 
-    #         if i == 'Partick Rental Station':
+                count_partick += 1
 
-    #             count_partick += 1
+            elif i == 'University Ave. Rental Station':
 
-    #         elif i == 'University Ave. Rental Station':
+                count_ave += 1
 
-    #             count_ave += 1
+            elif i == 'Argyle St. Rental Station':
 
-    #         elif i == 'Argyle St. Rental Station':
+                count_st += 1
 
-    #             count_st += 1
+            elif i == 'Maclay Rental Station' :
 
-    #         elif i == 'Maclay Rental Station' :
+                count_maclay += 1
 
-    #             count_maclay += 1
+            elif i == 'Bath St. Rental Station' :
 
-    #         elif i == 'Bath St. Rental Station' :
+                count_bath += 1
 
-    #             count_bath += 1
+        # count_partick = 10
+        # count_ave = 5
+        # count_st = 15
+        # count_maclay = 7
+        # count_bath = 3
 
-    #     # count_partick = 10
-    #     # count_ave = 5
-    #     # count_st = 15
-    #     # count_maclay = 7
-    #     # count_bath = 3
+        x_partick = np.random.randint(152, 447, count_partick)
+        y_partick = np.random.randint(324, 566, count_partick)
 
-    #     x_partick = np.random.randint(152, 447, count_partick)
-    #     y_partick = np.random.randint(324, 566, count_partick)
+        x_ave = np.random.randint(859, 1185, count_ave)
+        y_ave = np.random.randint(62, 251, count_ave)
 
-    #     x_ave = np.random.randint(859, 1185, count_ave)
-    #     y_ave = np.random.randint(62, 251, count_ave)
+        x_st = np.random.randint(920, 1223, count_st)
+        y_st = np.random.randint(490, 688, count_st)
 
-    #     x_st = np.random.randint(920, 1223, count_st)
-    #     y_st = np.random.randint(490, 688, count_st)
+        x_maclay = np.random.randint(687, 1040, count_maclay)
+        y_maclay = np.random.randint(832, 1107, count_maclay)
 
-    #     x_maclay = np.random.randint(687, 1040, count_maclay)
-    #     y_maclay = np.random.randint(832, 1107, count_maclay)
+        x_bath = np.random.randint(2030, 2380, count_bath)
+        y_bath = np.random.randint(688, 998, count_bath)
 
-    #     x_bath = np.random.randint(2030, 2380, count_bath)
-    #     y_bath = np.random.randint(688, 998, count_bath)
+        # Create a blank heat map
+        heatmap = np.zeros_like(gray_image)
 
-    #     # Create a blank heat map
-    #     heatmap = np.zeros_like(gray_image)
+        # Add data points to heat map
+        for x, y in zip(x_partick, y_partick): 
 
-    #     # Add data points to heat map
-    #     for x, y in zip(x_partick, y_partick): 
+            heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
 
-    #         heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
+        for x, y in zip(x_ave, y_ave): 
 
-    #     for x, y in zip(x_ave, y_ave): 
+            heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
 
-    #         heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
+        for x, y in zip(x_st, y_st): 
 
-    #     for x, y in zip(x_st, y_st): 
+            heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
 
-    #         heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
+        for x, y in zip(x_maclay, y_maclay): 
 
-    #     for x, y in zip(x_maclay, y_maclay): 
+            heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
 
-    #         heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
+        for x, y in zip(x_bath, y_bath): 
 
-    #     for x, y in zip(x_bath, y_bath): 
+            heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
 
-    #         heatmap[y - 8 : y + 8, x - 8 : x + 8] += 50
+        # Define color mapping
+        colors = [(1, 1, 1), (1, 0, 0)]  
+        cmap = LinearSegmentedColormap.from_list("custom_colormap", colors, N=256)
 
-    #     # Define color mapping
-    #     colors = [(1, 1, 1), (1, 0, 0)]  
-    #     cmap = LinearSegmentedColormap.from_list("custom_colormap", colors, N=256)
+        plt.figure(figsize=(10, 8))
+        plt.clf()
 
-    #     plt.figure(figsize=(10, 8))
-    #     plt.clf()
+        # Draw heat map
+        plt.imshow(heatmap, cmap=cmap)  # Set alpha value to make heatmap translucent
+        plt.imshow(image, alpha=0.6)  
+        plt.axis("off") 
 
-    #     # Draw heat map
-    #     plt.imshow(heatmap, cmap=cmap)  # Set alpha value to make heatmap translucent
-    #     plt.imshow(image, alpha=0.6)  
-    #     plt.axis("off") 
+        # Save result
+        plt.savefig("heatmap_on_image.png", bbox_inches="tight", pad_inches=0, dpi=300)
+        # plt.show()
 
-    #     # Save result
-    #     plt.savefig("heatmap_on_image.png", bbox_inches="tight", pad_inches=0, dpi=300)
-    #     # plt.show()
+    def heatmap(self) :
 
-    # def heatmap(self) :
+        '''
+        The function is for bicycles' visualization.
 
-    #     '''
-    #     The function is for bicycles' visualization.
-
-    #     '''
-    #     self.clear()
-    #     self.show_heatmap("/Users/fan/Desktop/Group project/glasgow map.jpg")
-    #     self.photo = PhotoImage(file='heatmap_on_image.png')
-    #     self.photo = self.photo.subsample(2, 2)
-    #     self.photobox = Label(self.window, image=self.photo)
-    #     self.photobox.place(x=130, y=130, width=1200, height=600)
+        '''
+        self.clear()
+        self.show_heatmap("images/glasgow_map.png")
+        self.photo = PhotoImage(file='heatmap_on_image.png')
+        self.photo = self.photo.subsample(2, 2)
+        self.photobox = Label(self.window, image=self.photo)
+        self.photobox.place(x=130, y=130, width=1200, height=600)
 
     def show_figure(self) :
         
