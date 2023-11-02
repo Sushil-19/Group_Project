@@ -26,7 +26,7 @@ This is a simple E-bike Rental System implemented using Tkinter, a Python librar
 3. Change the directory to the project folder:
 
    ```bash
-   cd bike-management-system
+   cd Group_Project
    ```
 
 4. Install the required dependencies:
