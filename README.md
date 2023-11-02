@@ -14,7 +14,7 @@ This is a simple E-bike Rental System implemented using Tkinter, a Python librar
 ## Features
 - User-friendly graphical interface.
 - Has Customer, Operator, and Manager functionalities to handle databases and use the rental system for each registered person accordingly.
-- 
+- Very simple code and easy to understand the functionality.
 
 ## Installation
 1. Fork the repository in your account
@@ -24,7 +24,7 @@ This is a simple E-bike Rental System implemented using Tkinter, a Python librar
    git clone https://github.com/your-github-account/Group_Project.git
    ```
 
-3. Change directory to the project folder:
+3. Change the directory to the project folder:
 
    ```bash
    cd bike-management-system
