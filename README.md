@@ -30,11 +30,13 @@ Welcome to the E-bike Rental System, a user-friendly application that allows you
 - [License](#license)
 
 ## Features
-
-
+- User-friendly graphical interface.
+- Ability to rent E-bikes.
+- View available bikes and their details.
+- Manage and track bike rentals.
 
 ## Usage
-To get started with the Bike Management System, follow these installation steps:
+To get started with the E-Bike Management System (Glas'e'go), follow the below steps:
 
 # Customer
 
@@ -178,64 +180,6 @@ Contributions to improve the Bike Management System are welcome. If you'd like t
 3. Make your changes and commit them.
 4. Push to your fork and submit a pull request.
 
-Certainly! Below is a basic template for a README file for your "E-bike Rental System" project in Tkinter:
-
-```markdown
-# E-bike Rental System
-
-This is a simple E-bike Rental System implemented using Tkinter, a Python library for creating graphical user interfaces. This project allows users to rent E-bikes, view available bikes, and manage rentals.
-
-## Table of Contents
-
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- User-friendly graphical interface.
-- Ability to rent E-bikes.
-- View available bikes and their details.
-- Manage and track bike rentals.
-
-## Screenshots
-
-Insert screenshots or GIFs of your application to provide a visual overview.
-
-## Installation
-
-To run the E-bike Rental System on your local machine, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/e-bike-rental-system.git
-   ```
-
-2. Change directory to the project folder:
-
-   ```bash
-   cd e-bike-rental-system
-   ```
-
-3. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-To launch the E-bike Rental System, run the following command:
-
-```bash
-python main.py
-```
-
-Follow the on-screen instructions to rent E-bikes and manage your rentals.
 
 ## Contributing
 
