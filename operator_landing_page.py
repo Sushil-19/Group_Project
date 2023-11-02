@@ -328,9 +328,32 @@ def open_operator_window(root):
 # ---------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------####### Repair Functionality ########-----------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------
- 
-    # Function to handle the "Repair" button click
     def repair_action(bike_id):
+        cursor.execute("SELECT is_servicing FROM bikes WHERE bike_id = ?", (bike_id,))
+        result = cursor.fetchone()
+        
+        if result and result[0] == 1:
+            # The bike is already in servicing state
+            messagebox.showinfo("No Repair Needed", f"Bike {bike_id} is already under servicing.")
+        else:
+            # The bike is not in servicing state, proceed with the repair
+            cursor.execute("UPDATE bikes SET is_servicing = 1, is_available = 0 WHERE bike_id = ?", (bike_id,))
+            conn.commit()
+            repair_button.config(state=tk.DISABLED)
+            
+            # Simulate a 5-second charging delay
+            time.sleep(5)
+            
+            # Enable is_available and is_charged in the bikes table
+            cursor.execute("UPDATE bikes SET is_servicing = 0, is_available = 1 WHERE bike_id = ?", (bike_id,))
+            conn.commit()
+            repair_button.config(state=tk.NORMAL)
+            
+            # Show a message confirming the bike is charged and available
+            messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
+
+    # Function to handle the "Repair" button click
+     '''def repair_action(bike_id):
         cursor.execute("UPDATE bikes SET is_servicing = 1, is_available = 0 WHERE bike_id = ?", (bike_id,))
         conn.commit()
         repair_button.config(state=tk.DISABLED)
@@ -341,7 +364,7 @@ def open_operator_window(root):
         conn.commit()
         repair_button.config(state=tk.NORMAL)
         # Show a message confirming the bike is charged and available
-        messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
+        messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")'''
         # messagebox.showinfo("Repair Bike", f"Repair the bike with ID: {bike_id}")
     # Fetch bike information from the database
     cursor.execute("SELECT * FROM BIKES")
