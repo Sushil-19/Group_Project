@@ -1,0 +1,8 @@
+sqlite3
+tkinter
+operator_landing_page
+manager_landing_page
+customer_landing_page
+os
+re
+PIL
