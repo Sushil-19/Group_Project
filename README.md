@@ -49,7 +49,7 @@ To get started with the E-Bike Management System (Glas'e'go), follow the below s
 - [Customer Paying for Your Ride](#customer-paying-for-your-ride)
 - [Customer Reporting a Defective Vehicle](#customer-reporting-a-defective-vehicle)
 
-## Customer Registration
+### Customer Registration
 
 To get started with the E-bike Rental System, you need to create an account. Follow these steps:
 
@@ -57,7 +57,7 @@ To get started with the E-bike Rental System, you need to create an account. Fol
 2. Fill in your details, including your name, email, and password.
 3. Click "Register" to create your account.
 
-## Customer Log In
+### Customer Log In
 
 Once you've registered, you can log in to your account:
 
@@ -65,7 +65,7 @@ Once you've registered, you can log in to your account:
 2. Enter your registered email and password.
 3. Click "Log In" to access your account.
 
-## Customer Adding Funds to Wallet
+### Customer Adding Funds to Wallet
 
 To rent E-bikes, you'll need to have funds in your wallet. Here's how to add funds:
 
@@ -74,7 +74,7 @@ To rent E-bikes, you'll need to have funds in your wallet. Here's how to add fun
 3. Enter the desired amount and payment details.
 4. Confirm the transaction to add funds to your wallet.
 
-## Customer Renting a Vehicle
+### Customer Renting a Vehicle
 
 Now that you have funds in your wallet, you can rent a vehicle:
 
@@ -82,7 +82,7 @@ Now that you have funds in your wallet, you can rent a vehicle:
 2. Browse the available E-bikes and choose one.
 3. Click on the "Rent" button to start your journey.
 
-## Customer Checking Activity
+### Customer Checking Activity
 
 You can monitor your current rentals and perform vehicle returns from the "Activity" page:
 
@@ -90,7 +90,7 @@ You can monitor your current rentals and perform vehicle returns from the "Activ
 2. View your active rentals and the details.
 3. To return a vehicle, click the corresponding option.
 
-## Customer Returning a Vehicle
+### Customer Returning a Vehicle
 
 When you're ready to return your vehicle, follow these steps:
 
@@ -98,14 +98,14 @@ When you're ready to return your vehicle, follow these steps:
 2. The system will prompt you with the final amount based on the travel time.
 3. Click "Pay" to complete the transaction from your wallet.
 
-## Customer Paying for Your Ride
+### Customer Paying for Your Ride
 
 To pay for your ride, ensure you have sufficient funds in your wallet:
 
 1. When prompted with the final amount, click "Pay."
 2. The payment will be deducted from your wallet balance.
 
-## Customer Reporting a Defective Vehicle
+### Customer Reporting a Defective Vehicle
 
 If you come across a defective vehicle or want to report an issue, follow these steps:
 
