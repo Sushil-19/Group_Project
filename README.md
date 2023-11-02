@@ -1,8 +1,22 @@
 # Group-Project
 
 Welcome to the E-bike Rental System, a user-friendly application that allows you to rent E-bikes conveniently. This README will guide you through the steps to use the system effectively.
+This is a simple E-bike Rental System implemented using Tkinter, a Python library for creating graphical user interfaces.
 
+## Table of Contents
 
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- User-friendly graphical interface.
+- Has Customer, Operator, and Manager functionalities to handle databases and use the rental system for each registered person accordingly.
+- 
+
+## Installation
 1. Fork the repository in your account
 2. Clone your forked repository:
 
@@ -21,19 +35,6 @@ Welcome to the E-bike Rental System, a user-friendly application that allows you
    ```bash
    pip install -r requirements.txt
    ```
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-- User-friendly graphical interface.
-- Ability to rent E-bikes.
-- View available bikes and their details.
-- Manage and track bike rentals.
 
 ## Usage
 To get started with the E-Bike Management System (Glas'e'go), follow the below steps:
