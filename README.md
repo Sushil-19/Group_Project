@@ -1,4 +1,4 @@
-# E-bike Rental System
+# Group-Project
 
 Welcome to the E-bike Rental System, a user-friendly application that allows you to rent E-bikes conveniently. This README will guide you through the steps to use the system effectively.
 
@@ -163,8 +163,11 @@ If you come across a defective vehicle or want to report an issue, follow these 
 # Manager
 
 1. The manager has only one login page.
-2. Access the data of bikes and rental stations by clicking on "Find" button for selected time frames.
-3. Get the graphical representation of data (Figures) by clcking on "Show Figures" button.
+2. Access the data of bikes and rental stations by clicking on the "Find" button for selected time frames.
+3. Get the graphical representation of data (Figures) by clicking on the "Show Figures" button.
+
+# Acknowledgments
+I thank Miss Mireilla Bikanga Ada for guiding us throughout and the opportunity to work and present for this project. I also acknowledge the efforts done by my fellow teammates to create this project.
 
 ## Contributing
 
@@ -175,6 +178,87 @@ Contributions to improve the Bike Management System are welcome. If you'd like t
 3. Make your changes and commit them.
 4. Push to your fork and submit a pull request.
 
+Certainly! Below is a basic template for a README file for your "E-bike Rental System" project in Tkinter:
+
+```markdown
+# E-bike Rental System
+
+This is a simple E-bike Rental System implemented using Tkinter, a Python library for creating graphical user interfaces. This project allows users to rent E-bikes, view available bikes, and manage rentals.
+
+## Table of Contents
+
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- User-friendly graphical interface.
+- Ability to rent E-bikes.
+- View available bikes and their details.
+- Manage and track bike rentals.
+
+## Screenshots
+
+Insert screenshots or GIFs of your application to provide a visual overview.
+
+## Installation
+
+To run the E-bike Rental System on your local machine, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/e-bike-rental-system.git
+   ```
+
+2. Change directory to the project folder:
+
+   ```bash
+   cd e-bike-rental-system
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+To launch the E-bike Rental System, run the following command:
+
+```bash
+python main.py
+```
+
+Follow the on-screen instructions to rent E-bikes and manage your rentals.
+
+## Contributing
+
+We welcome contributions to improve the project. If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your fork and submit a pull request.
+
+Please follow our [contribution guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Mention any libraries, resources, or individuals you'd like to acknowledge.
+
+## Contact
+
+For any questions or inquiries, contact [Sushil Dube](mailto:dubesushil99@gmail.com).
 
 Enjoy managing your bikes with the Bike Management System, and feel free to reach out if you have any questions or suggestions!
 
