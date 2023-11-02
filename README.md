@@ -9,7 +9,6 @@ This is a simple E-bike Rental System implemented using Tkinter, a Python librar
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - User-friendly graphical interface.
@@ -170,7 +169,7 @@ If you come across a defective vehicle or want to report an issue, follow these 
 3. Get the graphical representation of data (Figures) by clicking on the "Show Figures" button.
 
 # Acknowledgments
-I thank Miss Mireilla Bikanga Ada for guiding us throughout and the opportunity to work and present for this project. I also acknowledge the efforts done by my fellow teammates to create this project.
+I thank Miss Mireilla Bikanga Ada for guiding us throughout and for the opportunity to work and present for this project. I also acknowledge the efforts made by my fellow teammates to create this project.
 
 ## Contributing
 
@@ -180,26 +179,6 @@ Contributions to improve the Bike Management System are welcome. If you'd like t
 2. Create a new branch for your feature or bug fix.
 3. Make your changes and commit them.
 4. Push to your fork and submit a pull request.
-
-
-## Contributing
-
-We welcome contributions to improve the project. If you'd like to contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them.
-4. Push to your fork and submit a pull request.
-
-Please follow our [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Mention any libraries, resources, or individuals you'd like to acknowledge.
 
 ## Contact
 
