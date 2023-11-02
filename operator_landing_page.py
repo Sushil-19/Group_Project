@@ -307,7 +307,31 @@ def open_operator_window(root):
 # ---------------------------------------------------------------------------------------------------------------------------
 # -------------------------------------####### Charging Functionality ########-----------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------
- 
+
+    def charge_action(bike_id):
+        cursor.execute("SELECT is_charged FROM bikes WHERE bike_id = ?", (bike_id,))
+        result = cursor.fetchone()
+        
+        if result and result[0] == 1:
+            # The bike is already charged
+            messagebox.showinfo("No Charging Needed", f"Bike {bike_id} is already charged.")
+        else:
+            # The bike is not charged, proceed with the charging
+            cursor.execute("UPDATE bikes SET is_available = 0, is_charged = 0 WHERE bike_id = ?", (bike_id,))
+            conn.commit()
+            charge_button.config(state=tk.DISABLED)
+            
+            # Simulate a 5-second charging delay
+            time.sleep(5)
+            
+            # Enable is_available and is_charged in the bikes table
+            cursor.execute("UPDATE bikes SET is_available = 1, is_charged = 1 WHERE bike_id = ?", (bike_id,))
+            conn.commit()
+            charge_button.config(state=tk.NORMAL)
+            
+            # Show a message confirming the bike is charged and available
+            messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
+
     # Function to handle the "Charge" button click
     def charge_action(bike_id):
         # Disable is_available and is_charged in the bikes table
