@@ -333,7 +333,7 @@ def open_operator_window(root):
             messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
 
     # Function to handle the "Charge" button click
-    def charge_action(bike_id):
+    '''def charge_action(bike_id):
         # Disable is_available and is_charged in the bikes table
         cursor.execute("UPDATE bikes SET is_available = 0, is_charged = 0 WHERE bike_id = ?", (bike_id,))
         conn.commit()
@@ -347,7 +347,7 @@ def open_operator_window(root):
         charge_button.config(state=tk.NORMAL)
         # Show a message confirming the bike is charged and available
         messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
-        # messagebox.showinfo("Charge Bike", f"Charge the bike with ID: {bike_id}")
+        # messagebox.showinfo("Charge Bike", f"Charge the bike with ID: {bike_id}")'''
  
 # ---------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------####### Repair Functionality ########-----------------------------------------------
