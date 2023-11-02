@@ -2430,7 +2430,7 @@ def change_password(email):
             # Update the password in the database
             cursor.execute("UPDATE customers SET password=? WHERE email=?", (new_password, email))
             conn.commit()
-            conn.close()
+            # conn.close()
             messagebox.showinfo("Success", "Password changed successfully.")
             old_password_entry.delete(0, tk.END)
             new_password_entry.delete(0, tk.END)
