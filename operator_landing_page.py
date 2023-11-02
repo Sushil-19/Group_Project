@@ -356,7 +356,7 @@ def open_operator_window(root):
         cursor.execute("SELECT is_servicing FROM bikes WHERE bike_id = ?", (bike_id,))
         result = cursor.fetchone()
         
-        if result and result[0] == 1:
+        if result and result[0] == 0:
             # The bike is already in servicing state
             messagebox.showinfo("No Repair Needed", f"Bike {bike_id} is already under servicing.")
         else:
@@ -374,10 +374,10 @@ def open_operator_window(root):
             repair_button.config(state=tk.NORMAL)
             
             # Show a message confirming the bike is charged and available
-            messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
+            messagebox.showinfo("Bike Repaired", f"Bike {bike_id} is now Repaired and available.")
 
     # Function to handle the "Repair" button click
-     '''def repair_action(bike_id):
+    '''def repair_action(bike_id):
         cursor.execute("UPDATE bikes SET is_servicing = 1, is_available = 0 WHERE bike_id = ?", (bike_id,))
         conn.commit()
         repair_button.config(state=tk.DISABLED)
@@ -440,19 +440,29 @@ def open_operator_window(root):
  
         # Function to handle the "Repair" button click
         def repair_action(bike_id):
-            cursor.execute("UPDATE bikes SET is_servicing = 1, is_available = 0 WHERE bike_id = ?", (bike_id,))
-            conn.commit()
-            repair_button.config(state=tk.DISABLED)
-            # Simulate a 5-second charging delay
-            time.sleep(5)
-            # Enable is_available and is_charged in the bikes table
-            cursor.execute("UPDATE bikes SET is_servicing = 0, is_available = 1 WHERE bike_id = ?", (bike_id,))
-            conn.commit()
-            repair_button.config(state=tk.NORMAL)
-            # Show a message confirming the bike is charged and available
-            messagebox.showinfo("Bike Charged", f"Bike {bike_id} is now charged and available.")
-            # messagebox.showinfo("Repair Bike", f"Repair the bike with ID: {bike_id}")
- 
+            cursor.execute("SELECT is_servicing FROM bikes WHERE bike_id = ?", (bike_id,))
+            result = cursor.fetchone()
+            
+            if result and result[0] == 0:
+                # The bike is already in servicing state
+                messagebox.showinfo("No Repair Needed", f"Bike {bike_id} is already under servicing.")
+            else:
+                # The bike is not in servicing state, proceed with the repair
+                cursor.execute("UPDATE bikes SET is_servicing = 1, is_available = 0 WHERE bike_id = ?", (bike_id,))
+                conn.commit()
+                repair_button.config(state=tk.DISABLED)
+                
+                # Simulate a 5-second charging delay
+                time.sleep(5)
+                
+                # Enable is_available and is_charged in the bikes table
+                cursor.execute("UPDATE bikes SET is_servicing = 0, is_available = 1 WHERE bike_id = ?", (bike_id,))
+                conn.commit()
+                repair_button.config(state=tk.NORMAL)
+                
+                # Show a message confirming the bike is charged and available
+                messagebox.showinfo("Bike Repaired", f"Bike {bike_id} is now Repaired and available.")
+    
  
         repair_button = tk.Button(row_frame, text="Repair", command=lambda bike_id=bike_id: repair_action(bike_id))
         repair_button.pack(side=tk.LEFT)
@@ -466,6 +476,7 @@ def open_operator_window(root):
             # Create a new window for moving bikes
             move_window = tk.Toplevel(root)
             move_window.title("Move Bike")
+            move_window.geometry('200x200')
  
             # Create a Combobox for selecting the new location
             location_label = tk.Label(move_window, text="Select new location:")
@@ -477,6 +488,30 @@ def open_operator_window(root):
  
             # Function to update the location in the database
             def update_location(bike_id):
+                selected_location = new_location_var.get()
+                if selected_location:
+                    selected_bike_id = bike_id
+
+                    # Check if the bike is available and not in servicing
+                    cursor.execute("SELECT is_available, is_servicing, BIKE_LOCATION FROM BIKES WHERE BIKE_ID = ?", (selected_bike_id,))
+                    result = cursor.fetchone()
+
+                    if result and result[0] == 1 and result[1] == 0:
+                        current_location = result[2]
+                        
+                        if selected_location == current_location:
+                            messagebox.showerror("Error", "The bike is already at the selected location. Please select another location.")
+                        else:
+                            cursor.execute("UPDATE BIKES SET BIKE_LOCATION = ? WHERE BIKE_ID = ?", (selected_location, selected_bike_id))
+                            time.sleep(5)
+                            messagebox.showinfo("Success", f"The bike is moved to {selected_location}")
+                            conn.commit()
+                            move_window.destroy()  # Close the move window
+                    else:
+                        # Notify the user that the bike is not available for moving
+                        messagebox.showerror("Unavailable", "The bike is not available for moving.")
+
+            '''def update_location(bike_id):
                 selected_location = new_location_var.get()
                 if selected_location:
                     selected_bike_id =  bike_id
@@ -494,7 +529,7 @@ def open_operator_window(root):
                         # Notify the user that the bike is not available for moving
                         messagebox.showerror("Unavailable","The bike is not available for moving.")
                         # error_label = tk.Label(move_window, text="The bike is not available for moving.")
-                        # error_label.pack()
+                        # error_label.pack()'''
  
             # Create a button to execute the location update
             update_button = tk.Button(move_window, text="Move Bike", command=lambda: update_location(bike_id))

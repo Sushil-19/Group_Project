@@ -11,7 +11,7 @@ managers_data = [
 cursor.executemany("INSERT INTO managers (name, surname, gender, email, passport_no, contact, bank_account, working_hours, shift, allowances, password) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", managers_data)
 print("Inserted managers Data")
 
-'''customers_data = [
+customers_data = [
     ("Alice", "Bond", "female", "123 Customer St.", "customer1@example.com", 1234567890, "customer1password"),
     ("Bob", "Bond1", "male", "456 Customer Ave.", "customer2@example.com", 9876543210, "customer2password"),
     ("Carol", "Bond2", "female", "789 Customer Rd.", "customer3@example.com", 5555555555, "customer3password"),
@@ -19,11 +19,11 @@ print("Inserted managers Data")
     ("Eve", "Bond4", "female", "202 Customer Blvd.", "customer5@example.com", 2222222222, "customer5password")
 ]
 cursor.executemany("INSERT INTO customers (name,surname, gender, address, email, contact_number, password) VALUES (?, ?, ?, ?, ?, ?, ?)", customers_data)
-print("Inserted customers Data")'''
+print("Inserted customers Data")
 
-'''cursor.execute("Select * from customers")
+cursor.execute("Select * from customers")
 data = cursor.fetchall()
-print(data)'''
+print(data)
 # Commit the changes and close the connection
 conn.commit()
 conn.close()
