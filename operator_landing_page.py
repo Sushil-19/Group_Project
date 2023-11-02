@@ -50,7 +50,7 @@ def tracking_functionality(operator_window):
     labels_frame.pack()
     labels = ["Bike ID", "Type", "Name", "Model", "Available for Rent", "Is Servicing Needed", "Is Bike Charged"]
     for label in labels:
-        tk.Label(labels_frame, text=label, padx=10).pack(side=tk.LEFT)
+        tk.Label(labels_frame, text=label, padx=10, width=15).pack(side=tk.LEFT)
  
     # Create a function to update the bike details display
     def update_bike_display(bikes):
@@ -59,17 +59,36 @@ def tracking_functionality(operator_window):
             widget.destroy()
  
         for bike in bikes:
-            print(len(bike))
-            bike_id, bike_type, bike_name, bike_model, location, available, servicing, charged = bike
+            print("Inside For")
+            bike_id,bike_type, name, model, location, isavail, isservice, ischarged = bike
+            print(f"bike_id: {bike_id}, name: {name}, bike_type: {bike_type}, model: {model}, location: {location}")
+ 
             row_frame = tk.Frame(bike_display_frame)
             row_frame.pack()
-            tk.Label(row_frame, text=bike_id, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=bike_type, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=bike_name, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=bike_model, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=available, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=servicing, padx=10).pack(side=tk.LEFT)
-            tk.Label(row_frame, text=charged, padx=10).pack(side=tk.LEFT)
+ 
+            name_label = tk.Label(row_frame, text=bike_id, width=15)
+            name_label.pack(side=tk.LEFT)
+ 
+            type_label = tk.Label(row_frame, text=bike_type, width=15)
+            type_label.pack(side=tk.LEFT)
+ 
+            model_label = tk.Label(row_frame, text=name, width=15)
+            model_label.pack(side=tk.LEFT)
+ 
+            name_label = tk.Label(row_frame, text=model, width=15)
+            name_label.pack(side=tk.LEFT)
+ 
+            '''type_label = tk.Label(row_frame, text=location, width=15)
+            type_label.pack(side=tk.LEFT)'''
+ 
+            model_label = tk.Label(row_frame, text=isavail, width=15)
+            model_label.pack(side=tk.LEFT)
+ 
+            type_label = tk.Label(row_frame, text=isservice, width=15)
+            type_label.pack(side=tk.LEFT)
+ 
+            model_label = tk.Label(row_frame, text=ischarged, width=15)
+            model_label.pack(side=tk.LEFT)
  
     # Create a frame to display bike details
     bike_display_frame = tk.Frame(window)
