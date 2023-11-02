@@ -160,6 +160,12 @@ If you come across a defective vehicle or want to report an issue, follow these 
 3. Repair a bike if servicing is needed by clicking on the "Repair" button.
 4. Move a bike to a different location by clicking on the "Move Bike" button.
 
+# Manager
+
+1. The manager has only one login page.
+2. Access the data of bikes and rental stations by clicking on "Find" button for selected time frames.
+3. Get the graphical representation of data (Figures) by clcking on "Show Figures" button.
+
 ## Contributing
 
 Contributions to improve the Bike Management System are welcome. If you'd like to contribute:
@@ -169,9 +175,6 @@ Contributions to improve the Bike Management System are welcome. If you'd like t
 3. Make your changes and commit them.
 4. Push to your fork and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Enjoy managing your bikes with the Bike Management System, and feel free to reach out if you have any questions or suggestions!
 
